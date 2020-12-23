@@ -1,5 +1,7 @@
 const overrides = require('../cjs');
 
-overrides.set('whatsoever', './ok.js');
+overrides({
+  whatsoever: '../test-cjs/ok.js'
+});
 
 require('./test.js');

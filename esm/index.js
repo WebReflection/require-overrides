@@ -4,9 +4,9 @@ const {defineProperty, keys} = Object;
 
 const map = new Map;
 
-const overrides = init => {
-  for (const key of keys(init))
-    map.set(key, init[key]);
+const overrides = (multiple = {}) => {
+  for (const key of keys(multiple))
+    map.set(key, multiple[key]);
 };
 
 for (const method of [
