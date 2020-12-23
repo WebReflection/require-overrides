@@ -1,6 +1,6 @@
 # require-overrides
 
-A hacky way to alias modules with *SSR* counterparts, currently working only in *NodeJS* via *CommonJS* module system.
+A hacky *CommonJS* way to alias modules with *SSR* counterparts.
 
 ### Example
 ```js
@@ -23,4 +23,12 @@ overrides({
   uhtml: 'uhtml-ssr',
   uland: 'uland-ssr',
 });
+```
+
+### How to do this via ESM
+
+Until `import-maps` is officially supported, it is possible to use [@node-loader/import-maps](https://github.com/node-loader/node-loader-import-maps), example:
+
+```sh
+IMPORT_MAP_PATH=test-esm/node.importmap node --experimental-loader @node-loader/import-maps test-esm/index.js
 ```

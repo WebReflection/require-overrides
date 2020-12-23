@@ -1,0 +1,5 @@
+{
+  "imports": {
+    "whatsoever": "./test-cjs/ok.js"
+  }
+}

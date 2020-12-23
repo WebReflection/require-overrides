@@ -6,7 +6,7 @@
   "scripts": {
     "build": "npm run cjs && npm run test",
     "cjs": "ascjs --no-default esm cjs",
-    "test": "nyc node test-cjs/index.js"
+    "test": "IMPORT_MAP_PATH=test-esm/node.importmap node --experimental-loader @node-loader/import-maps test-esm/index.js && nyc node test-cjs/index.js"
   },
   "keywords": [
     "commonjs",
@@ -16,6 +16,7 @@
   "author": "Andrea Giammarchi",
   "license": "ISC",
   "devDependencies": {
+    "@node-loader/import-maps": "^1.0.3",
     "ascjs": "^4.0.3",
     "nyc": "^15.1.0"
   },
