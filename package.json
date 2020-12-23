@@ -6,7 +6,7 @@
   "scripts": {
     "build": "npm run cjs && npm run test",
     "cjs": "ascjs --no-default esm cjs",
-    "test": "node test-cjs/index.js"
+    "test": "nyc node test-cjs/index.js"
   },
   "keywords": [
     "commonjs",
@@ -16,7 +16,8 @@
   "author": "Andrea Giammarchi",
   "license": "ISC",
   "devDependencies": {
-    "ascjs": "^4.0.3"
+    "ascjs": "^4.0.3",
+    "nyc": "^15.1.0"
   },
   "module": "./esm/index.js",
   "type": "module",

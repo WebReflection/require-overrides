@@ -5,7 +5,11 @@ const {defineProperty, keys} = Object;
 
 const map = new Map;
 
-const overrides = (multiple = {}) => {
+/**
+ * Set one or more overrides through an object literal.
+ * @param {object} multiple an object with one or more `key: value` overrides.
+ */
+const overrides = multiple => {
   for (const key of keys(multiple))
     map.set(key, multiple[key]);
 };
