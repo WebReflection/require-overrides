@@ -21,7 +21,8 @@ The default export is a *callback* with attached all *Map* methods and propertie
 const overrides = require('require-overrides');
 overrides({
   uhtml: 'uhtml-ssr',
-  uland: 'uland-ssr',
+  // overrides, as callback, will receive all the module details
+  uland: (name, ...rest) => 'uland-ssr',
 });
 ```
 

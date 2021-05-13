@@ -25,11 +25,13 @@ defineProperty(overrides, 'size', {get: () => map.size});
 
 Module._resolveFilename = function ($resolveFilename) {
   return function _resolveFilename(name, ...rest) {
-    return $resolveFilename.call(
-      this,
-      map.has(name) ? map.get(name) : name,
-      ...rest
-    );
+    let value = name;
+    if (map.has(name)) {
+      value = map.get(name);
+      if (typeof value === 'function')
+        value = value(name, ...rest);
+    }
+    return $resolveFilename.call(this, value, ...rest);
   };
 }(Module._resolveFilename);
 
