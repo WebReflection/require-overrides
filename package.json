@@ -1,6 +1,6 @@
 {
   "name": "require-overrides",
-  "version": "0.2.3",
+  "version": "0.3.0",
   "description": "A hacky way to alias modules with SSR counterparts",
   "main": "./cjs/index.js",
   "scripts": {
